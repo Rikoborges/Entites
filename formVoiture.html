@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inserir Voiture</title>
+  </head>
+  <body>
+    <h1>Inserir Voiture</h1>
+    <form action="insererVoiture.php" method="POST">
+      Immatriculation: <input name="immatriculation" required /><br />
+      Couleur: <input name="couleur" /><br />
+      Poids: <input name="poids" type="number" step="0.01" /><br />
+      Puissance: <input name="puissance" type="number" /><br />
+      Capacité réservoir:
+      <input name="capaciteReservoir" type="number" step="0.01" /><br />
+      Niveau essence:
+      <input name="niveauEssence" type="number" value="5.0" /><br />
+      Nombre de places: <input name="nbPlaces" type="number" /><br />
+      Assuré: <input type="checkbox" name="assure" /><br />
+      Message: <input name="message" value="Bienvenue à bord !" /><br /><br />
+      <button type="submit">Inserir</button>
+    </form>
+  </body>
+</html>
