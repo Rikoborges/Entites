@@ -13,3 +13,15 @@ CREATE DATABASE IF NOT EXISTS `ParcAuto`;
     assure BOOLEAN DEFAULT FALSE,
     message TEXT DEFAULT 'Bienvenue à bord !'
 );
+
+USE ParcAuto;
+
+CREATE TABLE clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100),
+    prenom VARCHAR(100),
+    email VARCHAR(150),
+    dateNaissance DATE,
+    dateInscription DATE
+);
+

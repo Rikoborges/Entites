@@ -1,34 +1,23 @@
-<?php 
-public cass EntiteClient {
+<?php
+class EntiteClient {
+    private string $nom;
+    private string $prenom;
+    private string $email;
+    private string $dateNaissance;
+    private string $dateInscription;
 
-string $nom;
-string $prenom
-string $email
-string $dateNaissance
-string $dateInscription;
+    public function setNom(string $v): void { $this->nom = $v; }
+    public function getNom(): string { return $this->nom; }
 
+    public function setPrenom(string $v): void { $this->prenom = $v; }
+    public function getPrenom(): string { return $this->prenom; }
 
-public function __construct() {
-    $this -> nom = '';
-    $this -> prenom = '';
-    $this -> email = '';
-    $this -> dateNaissance = '';
-    $this -> dateInscription = '';
+    public function setEmail(string $v): void { $this->email = $v; }
+    public function getEmail(): string { return $this->email; }
+
+    public function setDateNaissance(string $v): void { $this->dateNaissance = $v; }
+    public function getDateNaissance(): string { return $this->dateNaissance; }
+
+    public function setDateInscription(string $v): void { $this->dateInscription = $v; }
+    public function getDateInscription(): string { return $this->dateInscription; }
 }
-
-public setNom ($nom)                                { this -> nom = $nom;}
-public setPrenom ($prenom )                         { $this ->prenom = $prenom;}
-public setEmail ($email)                            {$this -> email = $email;}
-public setDateNaissance ($dateNaissance)            { this -> dateNaissance = $dateNaissance;}
-public setDateInscription ($dateInscription)        { this -> dateInscription = $dateInscription;}
-
-public function  getNom() :string                     {retourn $this -> nom;}
-public  function getPrenom() :string                  { retourn $this ->prenom = $prenom;}
-public  function getEmail () :string                  { retourn $this -> email = $email;}
-public  function getDateNaissance () :string          { retourn $this -> dateNaissance = $dateNaissance;}
-public  function getDateInscription () : string       { retourn $this -> dateInscription = $dateInscription;}
-
-
-}
-
-?>
