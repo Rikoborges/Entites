@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Universel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2b2d42;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 4px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #2b7cff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1f5fd0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-section {
+            margin-top: 8px;
+        }
+
+        .btn-retour {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #e0e0e0;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+    background-color: #d0d0d0;
+}
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <div class="form-container">
+        <h1>Formulaire d'Enregistrement</h1>
+        <form action="router.php" method="POST">
+            <label for="tipo">Type d'enregistrement :</label>
+            <select name="tipo" id="tipo" onchange="atualiserChamps()">
+                <option value="voiture">Voiture</option>
+                <option value="client">Client</option>
+            </select>
+
+            <!-- Section commune -->
+            <div class="form-section">
+                <label>Message :</label>
+                <input type="text" name="message" value="Bienvenue à bord !">
+            </div>
+
+            <!-- Voiture -->
+            <div id="champs-voiture" class="form-section">
+                <label>Immatriculation :</label>
+                <input type="text" name="immatriculation">
+
+                <label>Couleur :</label>
+                <input type="text" name="couleur">
+
+                <label>Poids (kg) :</label>
+                <input type="number" step="0.01" name="poids">
+
+                <label>Puissance (CV) :</label>
+                <input type="number" name="puissance">
+
+                <label>Capacité du réservoir (L) :</label>
+                <input type="number" step="0.01" name="capaciteReservoir">
+
+                <label>Niveau d'essence (L) :</label>
+                <input type="number" step="0.01" name="niveauEssence" value="5.0">
+
+                <label>Nombre de places :</label>
+                <input type="number" name="nbPlaces">
+
+                <label>Assuré :</label>
+                <input type="checkbox" name="assure">
+            </div>
+
+            <!-- Client -->
+            <div id="champs-client" class="form-section hidden">
+                <label>Nom :</label>
+                <input type="text" name="nom">
+
+                <label>Prénom :</label>
+                <input type="text" name="prenom">
+
+                <label>Email :</label>
+                <input type="email" name="email">
+
+                <label>Date de naissance :</label>
+                <input type="date" name="dateNaissance">
+
+                <label>Date d'inscription :</label>
+                <input type="date" name="dateInscription">
+            </div>
+
+            <button type="submit">Soumettre</button>
+
+            <a href="index.php" class="btn-retour">⬅ Retour à l'accueil</a>
+
+        </form>
+      
+
+
+    </div>
+
+    <script>
+        function atualiserChamps() {
+            const type = document.getElementById('tipo').value;
+            document.getElementById('champs-voiture').classList.toggle('hidden', type !== 'voiture');
+            document.getElementById('champs-client').classList.toggle('hidden', type !== 'client');
+        }
+
+        atualiserChamps();
+    </script>
+    
+</body>
+</html>
